@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://e4yelwsmm43m"]
+
+[ext_resource type="Texture2D" uid="uid://bwhshkk62k3bh" path="res://assets/bird/sparrow.png" id="1_64yi5"]
+[ext_resource type="Script" uid="uid://b54381lgjscgt" path="res://assets/bird/sparrow.gd" id="1_665qy"]
+[ext_resource type="PackedScene" uid="uid://dnetm54guji21" path="res://assets/bird/shadow.tscn" id="3_pdns6"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_64yi5"]
+radius = 24.0
+
+[node name="Sparrow" type="Area2D"]
+script = ExtResource("1_665qy")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_64yi5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_64yi5")
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="Shadow" parent="." instance=ExtResource("3_pdns6")]
+position = Vector2(0, 1.9073486e-06)
+offset = Vector2(-3.84, 20.480005)
